@@ -1,5 +1,5 @@
-import zendeskClient from "./zendeskClient.js";
-import { CONFIG } from "./config.js";
+import zendeskClient from "../zendeskClient.js";
+import { CONFIG } from "../config.js";
 
 const MILISEGUNDOS_48H = 48 * 60 * 60 * 1000;
 
@@ -109,4 +109,3 @@ export async function ejecutarBatch48h() {
     throw error;
   }
 }
-
