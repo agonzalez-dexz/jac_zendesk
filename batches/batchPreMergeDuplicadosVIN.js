@@ -7,7 +7,6 @@ const DIAS_BUSQUEDA = 30;
 const MAX_PAGINAS = 10;
 
 const AREA_POSVENTA = "posventa";
-const ORIGENES_PERMITIDOS = ["data_lake", "email", "web"];
 const ESTADOS_RESUELTOS = ["solved", "closed"];
 
 async function buscarTickets(dias) {
@@ -94,21 +93,6 @@ async function obtenerDatosSolicitante(requesterId) {
     console.error(`Error al obtener datos del solicitante ${requesterId}:`, error.message);
     return { email: null, phone: null };
   }
-}
-
-function esOrigenPermitido(ticket) {
-  const via = ticket.via ? ticket.via.channel : null;
-  
-  if (!via) return false;
-  
-  const canalesPermitidos = {
-    "api": "data_lake",
-    "email": "email",
-    "web": "web"
-  };
-  
-  const origen = canalesPermitidos[via] || via.toLowerCase();
-  return ORIGENES_PERMITIDOS.includes(origen);
 }
 
 function esTicketActivo(ticket) {
@@ -222,8 +206,22 @@ async function validarReglasGrupo(ticketsGrupo, cacheSolicitantes = {}) {
     
     requestersUnicos.add(ticket.requester_id);
     
-    if (!esOrigenPermitido(ticket)) {
-      return { valido: false, motivo: `Origen no permitido: ${ticket.via?.channel || "desconocido"}` };
+    if (!cacheSolicitantes[ticket.requester_id]) {
+      cacheSolicitantes[ticket.requester_id] = await obtenerDatosSolicitante(ticket.requester_id);
+    }
+    
+    const datosTicket = cacheSolicitantes[ticket.requester_id];
+    
+    if (datosSolicitanteBase.email && datosTicket.email) {
+      if (datosSolicitanteBase.email !== datosTicket.email) {
+        return { valido: false, motivo: "Correo del solicitante no coincide" };
+      }
+    }
+    
+    if (datosSolicitanteBase.phone && datosTicket.phone) {
+      if (datosSolicitanteBase.phone !== datosTicket.phone) {
+        return { valido: false, motivo: "Teléfono del solicitante no coincide" };
+      }
     }
     
     if (esTicketActivo(ticket)) {
