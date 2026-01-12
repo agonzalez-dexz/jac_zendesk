@@ -1,0 +1,545 @@
+{
+  "fechaEjecucion": "2026-01-09T20:33:41.696Z",
+  "ticketsProcesados": 76,
+  "ticketsActualizados": 2,
+  "ticketsOmitidos": 74,
+  "errores": 0,
+  "detalles": [
+    {
+      "ticket_id": 2970,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2969,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2968,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2967,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2966,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2965,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2963,
+      "campos_actualizados": [
+        "VIN"
+      ],
+      "omitido": false,
+      "razon_omision": null,
+      "error": null
+    },
+    {
+      "ticket_id": 2962,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2961,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2956,
+      "campos_actualizados": [
+        "VIN"
+      ],
+      "omitido": false,
+      "razon_omision": null,
+      "error": null
+    },
+    {
+      "ticket_id": 2947,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2946,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2945,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2943,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2942,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2933,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2927,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2924,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2921,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2920,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2917,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2915,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2914,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2910,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2902,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2898,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2897,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2895,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2894,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2892,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2890,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2888,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2882,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2878,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2876,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2871,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2869,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2864,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2862,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2861,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2859,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2858,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2857,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2856,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2849,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2848,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2847,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2846,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2845,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2844,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2842,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2841,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2840,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2839,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2838,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2837,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2836,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2835,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2834,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2831,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2830,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2824,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2823,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2815,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2814,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2812,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2802,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2795,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2794,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2770,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2766,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2722,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2720,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2719,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2718,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    },
+    {
+      "ticket_id": 2716,
+      "campos_actualizados": [],
+      "omitido": true,
+      "razon_omision": "Requester no tiene valores para completar campos faltantes",
+      "error": null
+    }
+  ]
+}

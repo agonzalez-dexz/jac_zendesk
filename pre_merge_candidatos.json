@@ -1,8 +1,8 @@
 {
-  "fecha_analisis": "2026-01-07T23:18:35.968Z",
+  "fecha_analisis": "2026-01-09T20:32:24.994Z",
   "dias_busqueda": 30,
   "total_candidatos": 0,
-  "total_excluidos": 149,
+  "total_excluidos": 97,
   "candidatos": [],
   "excluidos": [
     {
@@ -17,23 +17,263 @@
       ]
     },
     {
-      "vin": "891234",
-      "motivo": "Menos de 2 tickets en el grupo",
+      "vin": "{{ticket.requester.custom_fields}}",
+      "motivo": "Solicitantes diferentes en el grupo",
       "tickets": [
         {
-          "id": 388,
-          "subject": "VALENTIN ESPARGA- MERIDA-",
+          "id": 2968,
+          "subject": "Conversación con Luisillo 😎🍀",
+          "status": "new"
+        },
+        {
+          "id": 2967,
+          "subject": "Llamada abandonada de: Persona +52 443 122 8811",
+          "status": "new"
+        },
+        {
+          "id": 2966,
+          "subject": "Llamada con Persona +52 993 399 7887",
+          "status": "open"
+        },
+        {
+          "id": 2965,
+          "subject": "Llamada abandonada de: Persona +52 993 399 7887",
+          "status": "new"
+        },
+        {
+          "id": 2964,
+          "subject": "hola mundo 2",
+          "status": "open"
+        },
+        {
+          "id": 2962,
+          "subject": "Conversación con MY ALLDATA",
+          "status": "new"
+        },
+        {
+          "id": 2961,
+          "subject": "Llamada abandonada de: Persona +52 999 387 6057",
           "status": "open"
         }
       ]
     },
     {
-      "vin": "tm013501",
+      "vin": "{{ticket.requester.custom_fields.vin}}",
+      "motivo": "Solicitantes diferentes en el grupo",
+      "tickets": [
+        {
+          "id": 2960,
+          "subject": "Conversación con Rookart Motorsport ®️ 🏁",
+          "status": "new"
+        },
+        {
+          "id": 2959,
+          "subject": "Llamada abandonada de: Persona +52 993 399 7887",
+          "status": "open"
+        },
+        {
+          "id": 2957,
+          "subject": "Llamada con Persona +52 999 387 6057",
+          "status": "open"
+        },
+        {
+          "id": 2954,
+          "subject": "Llamada abandonada de: Persona +52 443 227 1755",
+          "status": "open"
+        },
+        {
+          "id": 2953,
+          "subject": "Llamada abandonada de: Persona +52 33 1417 2994",
+          "status": "open"
+        },
+        {
+          "id": 2952,
+          "subject": "Llamada con Persona +52 443 227 1755",
+          "status": "open"
+        },
+        {
+          "id": 2951,
+          "subject": "Llamada abandonada de: Persona +52 993 399 7887",
+          "status": "open"
+        },
+        {
+          "id": 2949,
+          "subject": "Llamada abandonada de: Persona +52 443 238 9791",
+          "status": "open"
+        },
+        {
+          "id": 2948,
+          "subject": "Conversación con Maricela Valle",
+          "status": "new"
+        },
+        {
+          "id": 2939,
+          "subject": "Conversación con Noe Avalos",
+          "status": "new"
+        },
+        {
+          "id": 2938,
+          "subject": "Conversación con ..",
+          "status": "new"
+        },
+        {
+          "id": 2937,
+          "subject": "Conversación con Jorge Cervantes",
+          "status": "solved"
+        },
+        {
+          "id": 2935,
+          "subject": "Conversación con Dula",
+          "status": "new"
+        },
+        {
+          "id": 2958,
+          "subject": "Conversación con Ady",
+          "status": "solved"
+        },
+        {
+          "id": 2955,
+          "subject": "Llamada con Persona +52 993 399 7887",
+          "status": "solved"
+        },
+        {
+          "id": 2950,
+          "subject": "Conversación con Odilia Infante Segura",
+          "status": "solved"
+        },
+        {
+          "id": 2944,
+          "subject": "Conversación con Suplirse Gomez",
+          "status": "solved"
+        },
+        {
+          "id": 2936,
+          "subject": "Conversación con Casa Arrayanes, San Juan Cosalá",
+          "status": "solved"
+        },
+        {
+          "id": 2931,
+          "subject": "Conversación con Ady",
+          "status": "solved"
+        },
+        {
+          "id": 2922,
+          "subject": "Conversación con .",
+          "status": "solved"
+        }
+      ]
+    },
+    {
+      "vin": "3galc5445tm014419",
       "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
-          "id": 2782,
-          "subject": "QUEJA-PATRICIA MORENO GERALDO-TM013501-TEHUACÁN-ACEITE",
+          "id": 2941,
+          "subject": "ATC2941 - FRANCISCO BARRERA - JAC COYOACAN ",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "r4705539",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2928,
+          "subject": "ATC 2928 - SANTIAGO DARIO ORTEGA - JAC VALLEJO ",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "mm00001",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2925,
+          "subject": "ATC2925 - ROSA FLORES MENDOZA - JAC COATZACOALCOS ",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "3gald1544sm023745",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2919,
+          "subject": "ATC2919 - JAVIER ARIAS GONZALEZ - JAC MORELIA ",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "lj11pab50rc081863",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2912,
+          "subject": "MARCOS ALBERTO RODRIGUEZ LJ11PAB50RC081863 SAN LUIS desface un mes servicio no quieren validar garantia",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "3gald1545rm008794",
+      "motivo": "Cantidad de tickets activos incorrecta: 2 (debe ser 1)",
+      "tickets": [
+        {
+          "id": 2906,
+          "subject": "Juan Luis Pedraza Gallegos titular 3GALD1545RM008794, / queja] tema de embrague ",
+          "status": "open"
+        },
+        {
+          "id": 2785,
+          "subject": "Solicitud o Queja-Cliente-VIN-JAC Store-Tipificación",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "pm003639",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2886,
+          "subject": "ATC 2886 - MARTIN GUTIERREZ - JAC GALERIAS ",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "tm000059",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2885,
+          "subject": "ATC2885- ENRIQUE CANALES - JAC SENDERO ",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "3gald2550sm026267",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2872,
+          "subject": "Conversación con AMGR",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "vin": "3galc3222sm003530",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2855,
+          "subject": "ATC 2855- JOSUE MAGNO CASTILLO - JAC PUEBLA ",
           "status": "open"
         }
       ]
@@ -56,6 +296,11 @@
         {
           "id": 2736,
           "subject": "Conversación con Roberto",
+          "status": "open"
+        },
+        {
+          "id": 2405,
+          "subject": "Conversación con Enrique Toledo",
           "status": "open"
         },
         {
@@ -114,13 +359,13 @@
           "status": "solved"
         },
         {
-          "id": 2433,
-          "subject": "Conversación con Erick Ramos",
+          "id": 2434,
+          "subject": "Mensaje de voz de: Erick Ramos",
           "status": "solved"
         },
         {
-          "id": 2434,
-          "subject": "Mensaje de voz de: Erick Ramos",
+          "id": 2433,
+          "subject": "Conversación con Erick Ramos",
           "status": "solved"
         },
         {
@@ -251,11 +496,6 @@
         {
           "id": 2407,
           "subject": "Llamada abandonada de: Persona +52 311 123 5904",
-          "status": "solved"
-        },
-        {
-          "id": 2405,
-          "subject": "Conversación con Enrique Toledo",
           "status": "solved"
         },
         {
@@ -662,116 +902,17 @@
           "id": 1608,
           "subject": "Llamada abandonada de: Persona +52 493 111 6555",
           "status": "solved"
-        },
+        }
+      ]
+    },
+    {
+      "vin": "3gald2559tm004074",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
         {
-          "id": 1530,
-          "subject": "Llamada con Persona +52 221 189 7726",
-          "status": "solved"
-        },
-        {
-          "id": 1529,
-          "subject": "Llamada con Persona +52 221 189 7726",
-          "status": "solved"
-        },
-        {
-          "id": 1528,
-          "subject": "Llamada con Persona +52 221 189 7726",
-          "status": "solved"
-        },
-        {
-          "id": 1527,
-          "subject": "Llamada abandonada de: Persona +52 449 225 3792",
-          "status": "solved"
-        },
-        {
-          "id": 1525,
-          "subject": "Llamada con Persona +52 998 937 0759",
-          "status": "solved"
-        },
-        {
-          "id": 1519,
-          "subject": "Llamada abandonada de: Persona +52 55 9547 7988",
-          "status": "solved"
-        },
-        {
-          "id": 1518,
-          "subject": "Llamada abandonada de: Persona +52 937 385 6699",
-          "status": "solved"
-        },
-        {
-          "id": 1517,
-          "subject": "Llamada abandonada de: Jessica Mendozas",
-          "status": "solved"
-        },
-        {
-          "id": 1516,
-          "subject": "Llamada abandonada de: Jessica Mendozas",
-          "status": "solved"
-        },
-        {
-          "id": 1507,
-          "subject": "Llamada abandonada de: Persona +52 722 297 8176",
-          "status": "solved"
-        },
-        {
-          "id": 1505,
-          "subject": "Llamada abandonada de: J Molina",
-          "status": "solved"
-        },
-        {
-          "id": 1503,
-          "subject": "Llamada abandonada de: J Molina",
-          "status": "solved"
-        },
-        {
-          "id": 1502,
-          "subject": "Conversación con .",
-          "status": "solved"
-        },
-        {
-          "id": 1497,
-          "subject": "Llamada abandonada de: Persona +52 55 4383 2991",
-          "status": "solved"
-        },
-        {
-          "id": 1490,
-          "subject": "Conversación con Chris Chavarín",
-          "status": "solved"
-        },
-        {
-          "id": 1478,
-          "subject": "Llamada abandonada de: gabo",
-          "status": "solved"
-        },
-        {
-          "id": 1463,
-          "subject": "Conversación con Nico",
-          "status": "solved"
-        },
-        {
-          "id": 1461,
-          "subject": "Llamada abandonada de: Persona +52 998 292 2570",
-          "status": "solved"
-        },
-        {
-          "id": 1459,
-          "subject": "Llamada abandonada de: Persona +52 449 225 3792",
-          "status": "solved"
-        },
-        {
-          "id": 1458,
-          "subject": "Llamada abandonada de: Persona +52 732 106 6767",
-          "status": "solved"
-        },
-        {
-          "id": 1455,
-          "subject": "Llamada abandonada de: Barbara",
-          "status": "solved"
-        },
-        {
-          "id": 1454,
-          "subject": "Llamada abandonada de: Persona +52 667 330 5030",
-          "status": "solved"
+          "id": 2729,
+          "subject": "Juan Carlos Pacheco Salinas-VIN 3GALD2559TM004074-JAC Store QUERETARO",
+          "status": "open"
         }
       ]
     },
@@ -785,9 +926,19 @@
           "status": "open"
         },
         {
-          "id": 2406,
-          "subject": "Conversación con Mary",
-          "status": "open"
+          "id": 2807,
+          "subject": "SOLICITUD-BRENDA VILLANUEVA-CELAYA-INFORMACION",
+          "status": "solved"
+        },
+        {
+          "id": 2792,
+          "subject": "SOLICITUD-JUAN RICARDO ZUÑIGA-ASISTENCIA VIAL",
+          "status": "solved"
+        },
+        {
+          "id": 2777,
+          "subject": "Conversación con Partes Eléctricas FOX 🚘",
+          "status": "solved"
         },
         {
           "id": 2754,
@@ -990,11 +1141,6 @@
           "status": "solved"
         },
         {
-          "id": 2537,
-          "subject": "Llamada con Persona +52 844 222 4698",
-          "status": "solved"
-        },
-        {
           "id": 2535,
           "subject": "Conversación con Brenda Sosa",
           "status": "solved"
@@ -1003,11 +1149,6 @@
           "id": 2530,
           "subject": "ATC2530 - QUEJA - JUAN FRANCISCO PEREZ MARTINEZ - ",
           "status": "pending"
-        },
-        {
-          "id": 2527,
-          "subject": "Llamada con Persona +52 993 208 4487",
-          "status": "solved"
         },
         {
           "id": 2524,
@@ -1020,21 +1161,6 @@
           "status": "solved"
         },
         {
-          "id": 2516,
-          "subject": "Llamada con Persona +52 461 136 7611",
-          "status": "solved"
-        },
-        {
-          "id": 2512,
-          "subject": "Llamada con Negocios inmobiliarios",
-          "status": "solved"
-        },
-        {
-          "id": 2510,
-          "subject": "Llamada con Persona +52 624 138 8027",
-          "status": "solved"
-        },
-        {
           "id": 2509,
           "subject": "Conversación con Aal 71E ⚡⚡",
           "status": "solved"
@@ -1042,11 +1168,6 @@
         {
           "id": 2501,
           "subject": "Llamada abandonada de: Persona +52 222 345 2942",
-          "status": "solved"
-        },
-        {
-          "id": 2497,
-          "subject": "Llamada con Persona +52 55 8977 6500",
           "status": "solved"
         },
         {
@@ -1078,6 +1199,11 @@
           "id": 2457,
           "subject": "Conversación con JUAN CARLOS",
           "status": "solved"
+        },
+        {
+          "id": 1354,
+          "subject": "RE: CLIMA SIN FUNCIONAR, LA PIEZA DIJERON LLEGARÍA DE 10 A 15 DÍAS, VAN 26 Y HOY DICEN APENAS LA SOLICITARON  RE: Alarma en JAC SEI 7 QUANTUM ayer me lo entregaron; tiene 6 días y sigue con alarma de check engine",
+          "status": "open"
         },
         {
           "id": 2444,
@@ -1112,6 +1238,11 @@
         {
           "id": 2438,
           "subject": "Conversación con Frida Gutierrez 🦋",
+          "status": "solved"
+        },
+        {
+          "id": 2406,
+          "subject": "Conversación con Mary",
           "status": "solved"
         },
         {
@@ -1159,13 +1290,283 @@
       ]
     },
     {
-      "vin": "jm001515",
-      "motivo": "Menos de 2 tickets en el grupo",
+      "vin": "0000000000",
+      "motivo": "Solicitantes diferentes en el grupo",
       "tickets": [
         {
-          "id": 2603,
-          "subject": "ATC2603 - QUEJA - KEVIN CASTILLO SANTIAGO - JM001515",
+          "id": 2451,
+          "subject": "Conversación con Deyanira Barbosa",
           "status": "open"
+        },
+        {
+          "id": 2725,
+          "subject": "Conversación con Cheli",
+          "status": "solved"
+        },
+        {
+          "id": 2708,
+          "subject": "Conversación con David's",
+          "status": "solved"
+        },
+        {
+          "id": 2671,
+          "subject": "Conversación con Joaquín Morfin",
+          "status": "solved"
+        },
+        {
+          "id": 1482,
+          "subject": "Conversación con Jaime Buenrostro",
+          "status": "open"
+        },
+        {
+          "id": 2450,
+          "subject": "Llamada abandonada de: Persona +52 311 123 5904",
+          "status": "solved"
+        },
+        {
+          "id": 2449,
+          "subject": "Llamada abandonada de: Persona +52 844 674 3039",
+          "status": "solved"
+        },
+        {
+          "id": 2448,
+          "subject": "Mensaje de voz de: Persona +52 844 674 3039",
+          "status": "solved"
+        },
+        {
+          "id": 2447,
+          "subject": "Mensaje de voz de: Persona +52 844 674 3039",
+          "status": "solved"
+        },
+        {
+          "id": 2446,
+          "subject": "Conversación con Mario Lugo",
+          "status": "solved"
+        },
+        {
+          "id": 2445,
+          "subject": "Mensaje de voz de: Persona +52 55 2716 3320",
+          "status": "solved"
+        },
+        {
+          "id": 1873,
+          "subject": "Conversación con 🌬️🍃✨",
+          "status": "solved"
+        },
+        {
+          "id": 1872,
+          "subject": "Conversación con Ratoni",
+          "status": "solved"
+        },
+        {
+          "id": 1871,
+          "subject": "Conversación con 😃😃😃",
+          "status": "solved"
+        },
+        {
+          "id": 1870,
+          "subject": "Conversación con Bere Ruvalcaba",
+          "status": "solved"
+        },
+        {
+          "id": 1869,
+          "subject": "Conversación con 👻",
+          "status": "solved"
+        },
+        {
+          "id": 1868,
+          "subject": "Conversación con Flor Ceron",
+          "status": "solved"
+        },
+        {
+          "id": 1867,
+          "subject": "Conversación con ❤️‍🩹",
+          "status": "solved"
+        },
+        {
+          "id": 1866,
+          "subject": "Conversación con rodriguezfuentesjesus12",
+          "status": "solved"
+        },
+        {
+          "id": 1865,
+          "subject": "Conversación con Nestor",
+          "status": "solved"
+        },
+        {
+          "id": 1863,
+          "subject": "Conversación con JuanCarlos Martinez",
+          "status": "solved"
+        },
+        {
+          "id": 1862,
+          "subject": "Conversación con 🌹María Guadalupe🌹",
+          "status": "solved"
+        },
+        {
+          "id": 1791,
+          "subject": "Conversación con kokis",
+          "status": "solved"
+        },
+        {
+          "id": 1781,
+          "subject": "Conversación con Chomin",
+          "status": "solved"
+        },
+        {
+          "id": 1779,
+          "subject": "Conversación con Orlando OrPaPe",
+          "status": "solved"
+        },
+        {
+          "id": 1778,
+          "subject": "Conversación con Alfredo Salguero B",
+          "status": "solved"
+        },
+        {
+          "id": 1772,
+          "subject": "Conversación con Antares⚓🛠️",
+          "status": "solved"
+        },
+        {
+          "id": 1769,
+          "subject": "Conversación con Andy Lizama 😎",
+          "status": "solved"
+        },
+        {
+          "id": 1768,
+          "subject": "Conversación con Jordan el mara😈👿👻👺",
+          "status": "solved"
+        },
+        {
+          "id": 1767,
+          "subject": "Conversación con Ale",
+          "status": "solved"
+        },
+        {
+          "id": 1766,
+          "subject": "Conversación con K",
+          "status": "solved"
+        },
+        {
+          "id": 1765,
+          "subject": "Mensaje de voz de: Persona +52 222 521 1200",
+          "status": "solved"
+        },
+        {
+          "id": 1758,
+          "subject": "Conversación con Héctor Flores",
+          "status": "solved"
+        },
+        {
+          "id": 1756,
+          "subject": "Conversación con Roque Sánchez",
+          "status": "solved"
+        },
+        {
+          "id": 1755,
+          "subject": "Conversación con Victor Rdz",
+          "status": "solved"
+        },
+        {
+          "id": 1753,
+          "subject": "Conversación con Arturo Lopez",
+          "status": "solved"
+        },
+        {
+          "id": 1751,
+          "subject": "Conversación con susy🎀",
+          "status": "solved"
+        },
+        {
+          "id": 1749,
+          "subject": "Conversación con 🌺",
+          "status": "solved"
+        },
+        {
+          "id": 1694,
+          "subject": "Llamada abandonada de: Persona +52 921 116 8901",
+          "status": "solved"
+        },
+        {
+          "id": 1693,
+          "subject": "Llamada abandonada de: Persona +52 993 469 7280",
+          "status": "solved"
+        },
+        {
+          "id": 1692,
+          "subject": "Conversación con Francisco Pucheta",
+          "status": "solved"
+        },
+        {
+          "id": 1651,
+          "subject": "Conversación con JUAN MARTIN MEZA ESCOBAR",
+          "status": "solved"
+        },
+        {
+          "id": 1622,
+          "subject": "Llamada abandonada de: Persona +52 55 1729 8936",
+          "status": "solved"
+        },
+        {
+          "id": 1607,
+          "subject": "Llamada abandonada de: Persona +52 81 1511 3358",
+          "status": "solved"
+        },
+        {
+          "id": 1606,
+          "subject": "Mensaje de voz de: Persona +52 656 298 7050",
+          "status": "solved"
+        },
+        {
+          "id": 1604,
+          "subject": "Mensaje de voz de: Persona +52 327 978 8230",
+          "status": "solved"
+        },
+        {
+          "id": 1601,
+          "subject": "Mensaje de voz de: Persona +52 311 593 8849",
+          "status": "solved"
+        },
+        {
+          "id": 1600,
+          "subject": "Mensaje de voz de: Persona +52 327 978 8230",
+          "status": "solved"
+        },
+        {
+          "id": 1598,
+          "subject": "Llamada abandonada de: Persona +52 921 260 6080",
+          "status": "solved"
+        },
+        {
+          "id": 1597,
+          "subject": "Mensaje de voz de: Persona +52 221 191 4091",
+          "status": "solved"
+        },
+        {
+          "id": 1596,
+          "subject": "Mensaje de voz de: Persona +52 953 140 3579",
+          "status": "solved"
+        },
+        {
+          "id": 1595,
+          "subject": "Llamada abandonada de: Persona +52 55 4362 3590",
+          "status": "solved"
+        },
+        {
+          "id": 1594,
+          "subject": "Llamada abandonada de: Persona +52 442 186 2722",
+          "status": "solved"
+        },
+        {
+          "id": 1593,
+          "subject": "Conversación con Yadhira",
+          "status": "solved"
+        },
+        {
+          "id": 1592,
+          "subject": "Llamada abandonada de: Persona +52 981 182 7592",
+          "status": "solved"
         }
       ]
     },
@@ -1232,6 +1633,11 @@
           "id": 2088,
           "subject": "Conversación con Edmun Dantes",
           "status": "open"
+        },
+        {
+          "id": 2825,
+          "subject": "Llamada con LUIS GONZALEZ",
+          "status": "solved"
         },
         {
           "id": 2755,
@@ -1397,16 +1803,6 @@
           "id": 1649,
           "subject": "Conversación con Cuauhtemoc",
           "status": "solved"
-        },
-        {
-          "id": 1495,
-          "subject": "Conversación con Eustaquio",
-          "status": "solved"
-        },
-        {
-          "id": 1468,
-          "subject": "LLAMADA DE PRUEBA ",
-          "status": "solved"
         }
       ]
     },
@@ -1444,39 +1840,12 @@
       ]
     },
     {
-      "vin": "lj12eks38p4705818",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 1823,
-          "subject": "Alerta de Rescate 78 - Oaxaca P",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2556sm001695",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 1811,
-          "subject": "Alerta de Rescate 78 - Oaxaca P",
-          "status": "open"
-        }
-      ]
-    },
-    {
       "vin": "lj12ekr27n4013737",
-      "motivo": "Solicitante sin email ni teléfono",
+      "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
           "id": 1740,
           "subject": "ATC1740 - VERONICA DOMINGUEZ - COATZACOALCOS ",
-          "status": "open"
-        },
-        {
-          "id": 547,
-          "subject": "ATC11868",
           "status": "open"
         }
       ]
@@ -1782,13 +2151,13 @@
           "status": "solved"
         },
         {
-          "id": 2492,
-          "subject": "Llamada con Persona +52 81 1764 9385",
+          "id": 2491,
+          "subject": "Conversación con Luis Sosa",
           "status": "solved"
         },
         {
-          "id": 2491,
-          "subject": "Conversación con Luis Sosa",
+          "id": 2492,
+          "subject": "Llamada con Persona +52 81 1764 9385",
           "status": "solved"
         },
         {
@@ -3017,11 +3386,6 @@
           "status": "solved"
         },
         {
-          "id": 1921,
-          "subject": "Alerta de Rescate 75 - Cancún P",
-          "status": "solved"
-        },
-        {
           "id": 1923,
           "subject": "Alerta de Rescate 75 - Cancún P",
           "status": "solved"
@@ -3032,13 +3396,13 @@
           "status": "solved"
         },
         {
-          "id": 1920,
+          "id": 1921,
           "subject": "Alerta de Rescate 75 - Cancún P",
           "status": "solved"
         },
         {
-          "id": 1919,
-          "subject": "Alerta de Rescate 80 - Durango P",
+          "id": 1920,
+          "subject": "Alerta de Rescate 75 - Cancún P",
           "status": "solved"
         },
         {
@@ -3054,6 +3418,11 @@
         {
           "id": 1914,
           "subject": "Alerta de Rescate 105 - Mexicali P",
+          "status": "solved"
+        },
+        {
+          "id": 1919,
+          "subject": "Alerta de Rescate 80 - Durango P",
           "status": "solved"
         },
         {
@@ -3360,18 +3729,101 @@
       ]
     },
     {
+      "vin": "lj1eekppxp7401381",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2880,
+          "subject": "QUEJA-ARMANDO MOISES LOPEZ CARRILLO-P7401381-OAXACA-BATERIA",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "r7402020",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2820,
+          "subject": "QUEJA-KEY GENARO SALAZAR-R7402020-SAN LUIS-BATERIA",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "r2253686",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2816,
+          "subject": "QUEJA-JOSE LUIS PALACIOS ESTEBAN-R2253686-OAXACA-SERVICIO",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "tm004429",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2809,
+          "subject": "QUEJA-JANIA RODRIGUEZ-TM004429-QUERETARO-FALLA SENSOR",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "3galc5340sm008110",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2808,
+          "subject": "Solicitud o Queja-Cliente-VIN-JAC Store-Tipificación",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "p7403633",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2804,
+          "subject": "SOLICITUD-MIGUEL GAYTAN-P7403633-IZTAPALAPA-ASISTENCIA VIAL",
+          "status": "solved"
+        }
+      ]
+    },
+    {
+      "vin": "3gapj1a83tm023384",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2800,
+          "subject": "JOSE ADRIAN GOMEZ PEREZ",
+          "status": "solved"
+        }
+      ]
+    },
+    {
+      "vin": "tm013501",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2782,
+          "subject": "QUEJA-PATRICIA MORENO GERALDO-TM013501-TEHUACÁN-ACEITE",
+          "status": "pending"
+        }
+      ]
+    },
+    {
       "vin": "p4016133",
-      "motivo": "No existe ticket padre con Área=Posventa y estado no resuelto",
+      "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
           "id": 2778,
           "subject": "SOLICITUD - ERIC MISAEL UTRERA - P4016133 - VERACRUZ",
           "status": "pending"
-        },
-        {
-          "id": 2763,
-          "subject": "ATC - SOLICITUD - ERIC MISAEL UTRERA DOMINGUEZ - P4016133",
-          "status": "closed"
         }
       ]
     },
@@ -3398,539 +3850,6 @@
       ]
     },
     {
-      "vin": "3gald1546sm013296",
-      "motivo": "Cantidad de tickets activos incorrecta: 2 (debe ser 1)",
-      "tickets": [
-        {
-          "id": 2742,
-          "subject": "PAOLA PACHECO - ATC 2742- TLANEPANTLA",
-          "status": "pending"
-        },
-        {
-          "id": 2693,
-          "subject": "Conversación con Caminos Y Puentes Intermex",
-          "status": "pending"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2559tm004074",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 2729,
-          "subject": "Juan Carlos Pacheco Salinas-VIN 3GALD2559TM004074-JAC Store QUERETARO",
-          "status": "pending"
-        }
-      ]
-    },
-    {
-      "vin": "0000000000",
-      "motivo": "Solicitantes diferentes en el grupo",
-      "tickets": [
-        {
-          "id": 2725,
-          "subject": "Conversación con Cheli",
-          "status": "solved"
-        },
-        {
-          "id": 2708,
-          "subject": "Conversación con David's",
-          "status": "solved"
-        },
-        {
-          "id": 2671,
-          "subject": "Conversación con Joaquín Morfin",
-          "status": "solved"
-        },
-        {
-          "id": 2451,
-          "subject": "Conversación con Deyanira Barbosa",
-          "status": "solved"
-        },
-        {
-          "id": 2450,
-          "subject": "Llamada abandonada de: Persona +52 311 123 5904",
-          "status": "solved"
-        },
-        {
-          "id": 2449,
-          "subject": "Llamada abandonada de: Persona +52 844 674 3039",
-          "status": "solved"
-        },
-        {
-          "id": 2448,
-          "subject": "Mensaje de voz de: Persona +52 844 674 3039",
-          "status": "solved"
-        },
-        {
-          "id": 2447,
-          "subject": "Mensaje de voz de: Persona +52 844 674 3039",
-          "status": "solved"
-        },
-        {
-          "id": 2446,
-          "subject": "Conversación con Mario Lugo",
-          "status": "solved"
-        },
-        {
-          "id": 2445,
-          "subject": "Mensaje de voz de: Persona +52 55 2716 3320",
-          "status": "solved"
-        },
-        {
-          "id": 1873,
-          "subject": "Conversación con 🌬️🍃✨",
-          "status": "solved"
-        },
-        {
-          "id": 1872,
-          "subject": "Conversación con Ratoni",
-          "status": "solved"
-        },
-        {
-          "id": 1871,
-          "subject": "Conversación con 😃😃😃",
-          "status": "solved"
-        },
-        {
-          "id": 1870,
-          "subject": "Conversación con Bere Ruvalcaba",
-          "status": "solved"
-        },
-        {
-          "id": 1869,
-          "subject": "Conversación con 👻",
-          "status": "solved"
-        },
-        {
-          "id": 1868,
-          "subject": "Conversación con Flor Ceron",
-          "status": "solved"
-        },
-        {
-          "id": 1867,
-          "subject": "Conversación con ❤️‍🩹",
-          "status": "solved"
-        },
-        {
-          "id": 1866,
-          "subject": "Conversación con rodriguezfuentesjesus12",
-          "status": "solved"
-        },
-        {
-          "id": 1865,
-          "subject": "Conversación con Nestor",
-          "status": "solved"
-        },
-        {
-          "id": 1863,
-          "subject": "Conversación con JuanCarlos Martinez",
-          "status": "solved"
-        },
-        {
-          "id": 1862,
-          "subject": "Conversación con 🌹María Guadalupe🌹",
-          "status": "solved"
-        },
-        {
-          "id": 1791,
-          "subject": "Conversación con kokis",
-          "status": "solved"
-        },
-        {
-          "id": 1781,
-          "subject": "Conversación con Chomin",
-          "status": "solved"
-        },
-        {
-          "id": 1779,
-          "subject": "Conversación con Orlando OrPaPe",
-          "status": "solved"
-        },
-        {
-          "id": 1778,
-          "subject": "Conversación con Alfredo Salguero B",
-          "status": "solved"
-        },
-        {
-          "id": 1772,
-          "subject": "Conversación con Antares⚓🛠️",
-          "status": "solved"
-        },
-        {
-          "id": 1769,
-          "subject": "Conversación con Andy Lizama 😎",
-          "status": "solved"
-        },
-        {
-          "id": 1768,
-          "subject": "Conversación con Jordan el mara😈👿👻👺",
-          "status": "solved"
-        },
-        {
-          "id": 1767,
-          "subject": "Conversación con Ale",
-          "status": "solved"
-        },
-        {
-          "id": 1766,
-          "subject": "Conversación con K",
-          "status": "solved"
-        },
-        {
-          "id": 1765,
-          "subject": "Mensaje de voz de: Persona +52 222 521 1200",
-          "status": "solved"
-        },
-        {
-          "id": 1758,
-          "subject": "Conversación con Héctor Flores",
-          "status": "solved"
-        },
-        {
-          "id": 1756,
-          "subject": "Conversación con Roque Sánchez",
-          "status": "solved"
-        },
-        {
-          "id": 1755,
-          "subject": "Conversación con Victor Rdz",
-          "status": "solved"
-        },
-        {
-          "id": 1753,
-          "subject": "Conversación con Arturo Lopez",
-          "status": "solved"
-        },
-        {
-          "id": 1751,
-          "subject": "Conversación con susy🎀",
-          "status": "solved"
-        },
-        {
-          "id": 1749,
-          "subject": "Conversación con 🌺",
-          "status": "solved"
-        },
-        {
-          "id": 1694,
-          "subject": "Llamada abandonada de: Persona +52 921 116 8901",
-          "status": "solved"
-        },
-        {
-          "id": 1693,
-          "subject": "Llamada abandonada de: Persona +52 993 469 7280",
-          "status": "solved"
-        },
-        {
-          "id": 1692,
-          "subject": "Conversación con Francisco Pucheta",
-          "status": "solved"
-        },
-        {
-          "id": 1651,
-          "subject": "Conversación con JUAN MARTIN MEZA ESCOBAR",
-          "status": "solved"
-        },
-        {
-          "id": 1622,
-          "subject": "Llamada abandonada de: Persona +52 55 1729 8936",
-          "status": "solved"
-        },
-        {
-          "id": 1607,
-          "subject": "Llamada abandonada de: Persona +52 81 1511 3358",
-          "status": "solved"
-        },
-        {
-          "id": 1606,
-          "subject": "Mensaje de voz de: Persona +52 656 298 7050",
-          "status": "solved"
-        },
-        {
-          "id": 1604,
-          "subject": "Mensaje de voz de: Persona +52 327 978 8230",
-          "status": "solved"
-        },
-        {
-          "id": 1601,
-          "subject": "Mensaje de voz de: Persona +52 311 593 8849",
-          "status": "solved"
-        },
-        {
-          "id": 1600,
-          "subject": "Mensaje de voz de: Persona +52 327 978 8230",
-          "status": "solved"
-        },
-        {
-          "id": 1598,
-          "subject": "Llamada abandonada de: Persona +52 921 260 6080",
-          "status": "solved"
-        },
-        {
-          "id": 1597,
-          "subject": "Mensaje de voz de: Persona +52 221 191 4091",
-          "status": "solved"
-        },
-        {
-          "id": 1596,
-          "subject": "Mensaje de voz de: Persona +52 953 140 3579",
-          "status": "solved"
-        },
-        {
-          "id": 1595,
-          "subject": "Llamada abandonada de: Persona +52 55 4362 3590",
-          "status": "solved"
-        },
-        {
-          "id": 1594,
-          "subject": "Llamada abandonada de: Persona +52 442 186 2722",
-          "status": "solved"
-        },
-        {
-          "id": 1593,
-          "subject": "Conversación con Yadhira",
-          "status": "solved"
-        },
-        {
-          "id": 1592,
-          "subject": "Llamada abandonada de: Persona +52 981 182 7592",
-          "status": "solved"
-        },
-        {
-          "id": 1591,
-          "subject": "Mensaje de voz de: Persona +52 981 186 9999",
-          "status": "solved"
-        },
-        {
-          "id": 1590,
-          "subject": "Mensaje de voz de: Persona +52 981 186 9999",
-          "status": "solved"
-        },
-        {
-          "id": 1589,
-          "subject": "Llamada abandonada de: Persona +52 238 122 2604",
-          "status": "solved"
-        },
-        {
-          "id": 1588,
-          "subject": "Llamada abandonada de: Persona +52 999 322 5207",
-          "status": "solved"
-        },
-        {
-          "id": 1587,
-          "subject": "Conversación con Ario Sierra.",
-          "status": "solved"
-        },
-        {
-          "id": 1586,
-          "subject": "Llamada abandonada de: Persona +52 81 1289 8175",
-          "status": "solved"
-        },
-        {
-          "id": 1585,
-          "subject": "Conversación con Paola",
-          "status": "solved"
-        },
-        {
-          "id": 1584,
-          "subject": "Conversación con J Felix Pedraza",
-          "status": "solved"
-        },
-        {
-          "id": 1583,
-          "subject": "Llamada abandonada de: Persona +52 220 285 5429",
-          "status": "solved"
-        },
-        {
-          "id": 1582,
-          "subject": "Conversación con Orlando Rms",
-          "status": "solved"
-        },
-        {
-          "id": 1581,
-          "subject": "Mensaje de voz de: Persona +52 222 607 2265",
-          "status": "solved"
-        },
-        {
-          "id": 1580,
-          "subject": "Conversación con Armando",
-          "status": "solved"
-        },
-        {
-          "id": 1579,
-          "subject": "Conversación con Epafras Salvo Por Gracia",
-          "status": "solved"
-        },
-        {
-          "id": 1578,
-          "subject": "Llamada abandonada de: Persona +52 624 145 2890",
-          "status": "solved"
-        },
-        {
-          "id": 1577,
-          "subject": "Conversación con Comandante Antrax",
-          "status": "solved"
-        },
-        {
-          "id": 1576,
-          "subject": "Conversación con 🌷 Susy Valle 🌷",
-          "status": "solved"
-        },
-        {
-          "id": 1575,
-          "subject": "Conversación con Casillas",
-          "status": "solved"
-        },
-        {
-          "id": 1574,
-          "subject": "Conversación con LOZADA",
-          "status": "solved"
-        },
-        {
-          "id": 1573,
-          "subject": "Conversación con José Antonio ⚽",
-          "status": "solved"
-        },
-        {
-          "id": 1572,
-          "subject": "Llamada abandonada de: Persona +52 312 189 5024",
-          "status": "solved"
-        },
-        {
-          "id": 1571,
-          "subject": "Conversación con Pablo Luna",
-          "status": "solved"
-        },
-        {
-          "id": 1570,
-          "subject": "Llamada abandonada de: Persona +52 971 106 0433",
-          "status": "solved"
-        },
-        {
-          "id": 1569,
-          "subject": "Mensaje de voz de: Persona +52 971 106 0433",
-          "status": "solved"
-        },
-        {
-          "id": 1568,
-          "subject": "Mensaje de voz de: Persona +52 354 125 0657",
-          "status": "solved"
-        },
-        {
-          "id": 1567,
-          "subject": "Llamada abandonada de: Persona +52 55 2250 7430",
-          "status": "solved"
-        },
-        {
-          "id": 1565,
-          "subject": "Llamada abandonada de: Persona +52 222 962 4246",
-          "status": "solved"
-        },
-        {
-          "id": 1562,
-          "subject": "Llamada abandonada de: Persona +52 785 108 0094",
-          "status": "solved"
-        },
-        {
-          "id": 1559,
-          "subject": "Llamada abandonada de: Persona +52 55 2967 4355",
-          "status": "solved"
-        },
-        {
-          "id": 1557,
-          "subject": "Llamada abandonada de: Persona +52 55 2967 4355",
-          "status": "solved"
-        },
-        {
-          "id": 1556,
-          "subject": "Llamada abandonada de: Persona +52 55 2967 4355",
-          "status": "solved"
-        },
-        {
-          "id": 1552,
-          "subject": "Llamada abandonada de: Persona +52 81 2381 0323",
-          "status": "solved"
-        },
-        {
-          "id": 1544,
-          "subject": "Conversación con Juan Martín Morales",
-          "status": "solved"
-        },
-        {
-          "id": 1543,
-          "subject": "Conversación con Britany Salas",
-          "status": "solved"
-        },
-        {
-          "id": 1542,
-          "subject": "Conversación con Raul Vicente",
-          "status": "solved"
-        },
-        {
-          "id": 1541,
-          "subject": "Conversación con Miguel",
-          "status": "solved"
-        },
-        {
-          "id": 1540,
-          "subject": "Conversación con Markdelacroix",
-          "status": "solved"
-        },
-        {
-          "id": 1539,
-          "subject": "Conversación con Ile🎄🎄🎅🏻☃️⛄️",
-          "status": "solved"
-        },
-        {
-          "id": 1538,
-          "subject": "Conversación con Maritza Mallely J",
-          "status": "solved"
-        },
-        {
-          "id": 1537,
-          "subject": "Conversación con Sergio Villasana Alvares",
-          "status": "solved"
-        },
-        {
-          "id": 1536,
-          "subject": "Alerta de Rescate 114 - Atizapán P",
-          "status": "solved"
-        },
-        {
-          "id": 1535,
-          "subject": "Conversación con Axel JCG",
-          "status": "solved"
-        },
-        {
-          "id": 1534,
-          "subject": "Conversación con Norberto",
-          "status": "solved"
-        },
-        {
-          "id": 1493,
-          "subject": "Llamada abandonada de: Persona +52 33 1278 2406",
-          "status": "solved"
-        },
-        {
-          "id": 1482,
-          "subject": "Conversación con Jaime Buenrostro",
-          "status": "solved"
-        },
-        {
-          "id": 1480,
-          "subject": "Conversación con Aracely Arvizu",
-          "status": "solved"
-        },
-        {
-          "id": 1457,
-          "subject": "Conversación con ACXEL",
-          "status": "solved"
-        }
-      ]
-    },
-    {
       "vin": "3galc3332sm019220",
       "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
@@ -3949,6 +3868,17 @@
           "id": 2694,
           "subject": "Conversación con Arleth 🏍️❌",
           "status": "solved"
+        }
+      ]
+    },
+    {
+      "vin": "3gald1546sm013296",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2693,
+          "subject": "Conversación con Caminos Y Puentes Intermex",
+          "status": "pending"
         }
       ]
     },
@@ -3999,11 +3929,6 @@
         {
           "id": 2486,
           "subject": "Llamada con Persona +52 55 5404 9587",
-          "status": "solved"
-        },
-        {
-          "id": 2485,
-          "subject": "ATC2485 - SOLICITUD - MANUEL CABRERA -",
           "status": "solved"
         },
         {
@@ -4058,6 +3983,17 @@
         {
           "id": 2625,
           "subject": "ATC 2625 - CLAUDIA ALAMILLA - JAC ECATEPEC ",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "jm001515",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 2603,
+          "subject": "ATC2603 - QUEJA - KEVIN CASTILLO SANTIAGO - JM001515",
           "status": "pending"
         }
       ]
@@ -4196,21 +4132,11 @@
     },
     {
       "vin": "lj11pab58sc018144",
-      "motivo": "Solicitantes diferentes en el grupo",
+      "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
           "id": 1169,
           "subject": "GERARDO ABDON UITZ COELLO",
-          "status": "open"
-        },
-        {
-          "id": 516,
-          "subject": "ATC11949",
-          "status": "open"
-        },
-        {
-          "id": 360,
-          "subject": "Llamada con Persona +52 998 192 3058",
           "status": "open"
         }
       ]
@@ -4260,17 +4186,6 @@
       ]
     },
     {
-      "vin": "3galj1390sm010353",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 954,
-          "subject": "JAC CUERNAVACA - Álvaro Belderrain García - X200",
-          "status": "open"
-        }
-      ]
-    },
-    {
       "vin": "tm023147",
       "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
@@ -4282,44 +4197,34 @@
       ]
     },
     {
+      "vin": "3galj1390sm010353",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 954,
+          "subject": "JAC CUERNAVACA - Álvaro Belderrain García - X200",
+          "status": "open"
+        }
+      ]
+    },
+    {
       "vin": "3gape1a92pm002755",
-      "motivo": "Solicitantes diferentes en el grupo",
+      "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
           "id": 884,
           "subject": "VANRENTA SA DE CV- GALERIAS",
-          "status": "open"
-        },
-        {
-          "id": 417,
-          "subject": "ARTURO MACHADO-GUADALAJARA- PM0002755",
           "status": "open"
         }
       ]
     },
     {
       "vin": "3gald1545sm023270",
-      "motivo": "Cantidad de tickets activos incorrecta: 2 (debe ser 1)",
+      "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
           "id": 867,
           "subject": "Re: [Untitled ticket 654] Comparta sus comentarios con nosotros",
-          "status": "open"
-        },
-        {
-          "id": 731,
-          "subject": "GERANRDO DE LA VEGA- ",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc1220rm013343",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 814,
-          "subject": "ATC814 - QUEJA - ALMA ZIRAIDA RAMIREZ SANCHEZ - RM013343",
           "status": "open"
         }
       ]
@@ -4331,17 +4236,6 @@
         {
           "id": 767,
           "subject": "ISIDRIO SANCHEZ- TUXTLA-T8- ",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "00000000000000",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 765,
-          "subject": "Llamada con +52 662 329 6649",
           "status": "open"
         }
       ]
@@ -4359,16 +4253,11 @@
     },
     {
       "vin": "lj12eks3xr4707086",
-      "motivo": "Solicitantes diferentes en el grupo",
+      "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
         {
           "id": 741,
           "subject": "EFRAIN GOMEZ- GALERIAS-",
-          "status": "open"
-        },
-        {
-          "id": 511,
-          "subject": "NESTOR EFRAIN GOMEZ GUZMAN- ",
           "status": "open"
         }
       ]
@@ -4396,758 +4285,6 @@
       ]
     },
     {
-      "vin": "3gald1541sm023783",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 634,
-          "subject": "ANTONIO DE LA TORRE-",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc1324sm018226",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 616,
-          "subject": "ATC11180",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj12ekr20p4012979",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 615,
-          "subject": "ATC11629",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj166a254p4710296",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 614,
-          "subject": "ATC11377",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5447tm014082",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 612,
-          "subject": "ATC11673",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5448tm014026",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 610,
-          "subject": "ATC11931",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gapj1a95pm000560",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 607,
-          "subject": "ATC11774",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald154xsm022499",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 605,
-          "subject": "ATC11641",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj166a250p4705354",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 603,
-          "subject": "ATC10944",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj166a250p4005740",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 601,
-          "subject": "ATC11870",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc3336sm019625",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 599,
-          "subject": "ATC11963",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald1541sm012704",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 598,
-          "subject": "ATC11695",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj12eks38n4707730",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 575,
-          "subject": "ATC11561",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gala3431sm007001",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 572,
-          "subject": "ATC10378",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2556sm025348",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 568,
-          "subject": "ATC10317",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2550tm004383",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 565,
-          "subject": "ATC11722",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj12fkt38n4016239",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 564,
-          "subject": "ATC11809",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5346sm008046",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 563,
-          "subject": "ATC11801",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3ga3c5340mm001189",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 562,
-          "subject": "ATC11917",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc3229rm005558",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 561,
-          "subject": "ATC11933",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj166a256p4711708",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 560,
-          "subject": "ATC11614",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj1eekpp3p7400539",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 558,
-          "subject": "ATC11580",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5347sm008170",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 557,
-          "subject": "ATC11329",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gala3435rm012051",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 553,
-          "subject": "ATC11967",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald1545sm012768",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 551,
-          "subject": "ATC11881",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5445rm001551",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 546,
-          "subject": "ATC11618",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gape1a9xtm025226",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 543,
-          "subject": "START BANREGIO S.A. DE C.V. SOFOM E.R. BANREGIO GRUPO FINANCIERO- JAC VILLAHERMOSA-",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5449rm006882",
-      "motivo": "Cantidad de tickets activos incorrecta: 2 (debe ser 1)",
-      "tickets": [
-        {
-          "id": 542,
-          "subject": "ATC11171",
-          "status": "open"
-        },
-        {
-          "id": 533,
-          "subject": "ATC11171",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj11kdbdxs1702924",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 541,
-          "subject": "ATC11537",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj166a25xn4013566",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 540,
-          "subject": "ATC11331",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc3225sm002517",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 536,
-          "subject": "ATC11966",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald1548sm022341",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 525,
-          "subject": "ATC11464",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3ga8c3334pm004408",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 524,
-          "subject": "ATC11670",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald1593sm014126",
-      "motivo": "Cantidad de tickets activos incorrecta: 2 (debe ser 1)",
-      "tickets": [
-        {
-          "id": 522,
-          "subject": "ATC11691",
-          "status": "open"
-        },
-        {
-          "id": 337,
-          "subject": "SEGUIMIENTO ATC11691 JUAN CARLOS MARIN SAGAHÓN  ",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galj1392rm003656",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 520,
-          "subject": "ATC11925",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj11pab59pc088632",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 513,
-          "subject": "ATC10040",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj12fkt36p4012581",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 512,
-          "subject": "ATC11656",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "p4710296",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 504,
-          "subject": "ATC11377 - En espera de refacción - ARTURO MERINO LOPEZ - P4710296",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sm012768",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 500,
-          "subject": "ATC11881-QUEJA DE FALLAS DE VEHICULO-JESSICA PEREZ PATRICIO-SM012768",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "tm014254",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 494,
-          "subject": "ATC11888-RENOVADORA DE SALTILLO-CAMBIO DE CRISTALES-TM014254",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "rm003656",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 492,
-          "subject": "ATC11925-FALLA DE UNIDAD-VANRENTA-RM003656",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "pm002764",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 491,
-          "subject": "ATC11932-QUEJA DE SERVICIO-Jorge luis Arceo Gonzales-PM002764",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sm008170",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 484,
-          "subject": "ATC11329 - Pendiente estatus de la agencia - SILVIA LYZETH HERNANDEZ MORENO - SM008170",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "n4013566",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 483,
-          "subject": "ATC11331 - Pendiente de pedido de refacción - OSMAN CHAVEZ BOSQUEZ - N4013566",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "r4006860",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 477,
-          "subject": "ATC11895-QUEJA DE GARANTÍA-MONICA PRIETO SABATINI-R4006860",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "rm005558",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 475,
-          "subject": "ATC11933-QUEJA DE VEHICULO CON RUIDO-Arrendadora Ve Por Más-RM005558",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "p4005714",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 474,
-          "subject": "ATC11289 - En espera de refacción - START BANREGIO - P4005714",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "p4013188",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 473,
-          "subject": "ATC11917-QUEJA DE PANTALLA-CENTRAL DE EQUIPOS INDUSTRIALE-P4013188",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sm018226",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 456,
-          "subject": "ATC11180 - LILI DEL CARMEN LOPEZ DE LA CRUZ - SM018226",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "p4705354",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 420,
-          "subject": "ATC10944 - Pendiente de entrega a cliente - Rz Motors - P4705354",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sm009588",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 418,
-          "subject": "ATC10888 - En espera de refacción - JOSE MANUEL LOZANO TREJO - SM009588",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sm007001",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 411,
-          "subject": "ATC10378 - MIGUEL ANGEL TECILLO MARTINEZ - SM007001",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "lj11pab51pc098183",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 410,
-          "subject": "BERSAIN MONTORES FUENTES",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sm025348",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 406,
-          "subject": "ATC10317 - RUBEN CARDENAS DELGADO - SM025348",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "sc018144",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 400,
-          "subject": "ATC11949-QUEJA FALLA EN PUERTA-GERARDO ABDON UITZ COELLO-SC018144",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "pc088632",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 396,
-          "subject": "ATC10040 - Espera respuesta de Agencia - BETHSY YARINA SANCHEZ ONOFRE - PC088632",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "pc098183",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 397,
-          "subject": "SEGUIMIENTO PC098183",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3ga0c3227jm000396",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 380,
-          "subject": "Ponce Carbajal Karime- ACAPULCO- ",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3galc1228sm005285",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 378,
-          "subject": "OMAR RUIZ ESPARZA. GALERIas",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "n4016873",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 376,
-          "subject": "ATC09630 - Pendiente de pedido de redacción - JULIA ESTUDILLO PORTILLO  - N4016873",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "rm008911",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 374,
-          "subject": "ATC11962-QUEJA SERVICIO-MARIA BEATRIZ HURTADO RAMIREZ-RM008911",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gate1a9xtm025226",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 370,
-          "subject": "BRENDA CASTRO- ESTATUS DE DIAGNOSTICO",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "rm000037",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 369,
-          "subject": "ATC09097 - En espera de reparación - ANA ITZEL CAMACHO LIZARRAGA - RM000037",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "rm001473",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 365,
-          "subject": "ATC11952-QUEJA-MARIA DENISSE MARCANO MORALES-RM001473",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "rm017733",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 361,
-          "subject": "ATC11957- Cita para reparación aire acondicionado- RM017733- ADRIANA PAOLA TORRE LOPEZ",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2555tm006808",
-      "motivo": "Solicitantes diferentes en el grupo",
-      "tickets": [
-        {
-          "id": 359,
-          "subject": "CAROLONA ESCOBAR-3GALD2555TM006808- EN ESPERA DE REFACCIONES",
-          "status": "open"
-        },
-        {
-          "id": 348,
-          "subject": "Fwd: FALLA CAMIONETA JAC T9",
-          "status": "open"
-        }
-      ]
-    },
-    {
-      "vin": "3gald154xsm023281",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 329,
-          "subject": "Llamada con +52 844 700 0141",
-          "status": "open"
-        }
-      ]
-    },
-    {
       "vin": "3gald2559tm004141",
       "motivo": "Menos de 2 tickets en el grupo",
       "tickets": [
@@ -5155,6 +4292,50 @@
           "id": 1855,
           "subject": "ATC1855- LUIS ALBERTO NAVARRO - JAC GDL FUENTES ",
           "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "nc086310",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 1850,
+          "subject": "Alerta de Rescate 111 - Veracruz P",
+          "status": "solved"
+        }
+      ]
+    },
+    {
+      "vin": "p7401381",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 1819,
+          "subject": "Alerta de Rescate 78 - Oaxaca P",
+          "status": "solved"
+        }
+      ]
+    },
+    {
+      "vin": "lj12eks38p4705818",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 1823,
+          "subject": "Alerta de Rescate 78 - Oaxaca P",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "vin": "3gald2556sm001695",
+      "motivo": "Menos de 2 tickets en el grupo",
+      "tickets": [
+        {
+          "id": 1811,
+          "subject": "Alerta de Rescate 78 - Oaxaca P",
+          "status": "solved"
         }
       ]
     },
@@ -5242,39 +4423,6 @@
         {
           "id": 1602,
           "subject": "ATC1602- LAURA PEÑA - TORREON",
-          "status": "pending"
-        }
-      ]
-    },
-    {
-      "vin": "3galc5442rm001510",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 1548,
-          "subject": "ATC1548 - QUEJA -JUAN MARTIN MORALES JUAREZ - RM001510",
-          "status": "pending"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2554tm006024",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 1483,
-          "subject": "ATC1483 - SOLICITUD- JOSE ALBERTO RUIZ THEUREL - TM006024",
-          "status": "pending"
-        }
-      ]
-    },
-    {
-      "vin": "3gald2551sm026617",
-      "motivo": "Menos de 2 tickets en el grupo",
-      "tickets": [
-        {
-          "id": 1476,
-          "subject": "ATC11497- ZACATECAS - ",
           "status": "pending"
         }
       ]
