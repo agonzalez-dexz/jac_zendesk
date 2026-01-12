@@ -28,7 +28,8 @@ jobs:
         env:
           ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
           ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
-          ZENDESK_TOKEN: ${{ secrets.ZENDESK_TOKEN }}
+          ZENDESK_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
+
 
       - name: Run batch completar campos desde request
         run: node batches/batchCompletarCamposDesdeRequest.js
