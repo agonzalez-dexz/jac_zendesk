@@ -240,7 +240,8 @@ async function marcarTicketsConTags(ticketIds, tags) {
   const MAX_REINTENTOS = 3;
   const DELAY_REINTENTO_BASE = 2000;
   
-  for (const ticketId of ticketIds) {
+  for (let i = 0; i < ticketIds.length; i++) {
+    const ticketId = ticketIds[i];
     let reintentos = 0;
     let exito = false;
     
@@ -261,31 +262,33 @@ async function marcarTicketsConTags(ticketIds, tags) {
         exito = true;
         
         if (reintentos > 0) {
-          console.log(`Ticket ${ticketId} marcado exitosamente después de ${reintentos} reintentos`);
+          console.log(`  ✓ Ticket ${ticketId} marcado después de ${reintentos} reintentos`);
         }
       } catch (error) {
         if (error.response && error.response.status === 429) {
-          const retryAfter = error.response.headers['retry-after'] || DELAY_REINTENTO_BASE;
-          const delayReintento = parseInt(retryAfter) * 1000 || DELAY_REINTENTO_BASE * Math.pow(2, reintentos);
+          const retryAfter = error.response.headers['retry-after'] || error.response.headers['Retry-After'];
+          const delayReintento = retryAfter ? parseInt(retryAfter) * 1000 : DELAY_REINTENTO_BASE * Math.pow(2, reintentos);
           
           reintentos++;
           
           if (reintentos < MAX_REINTENTOS) {
-            console.log(`Rate limit alcanzado para ticket ${ticketId}. Reintentando en ${delayReintento}ms (intento ${reintentos}/${MAX_REINTENTOS})`);
+            console.log(`  ⏳ Rate limit para ticket ${ticketId}. Esperando ${delayReintento}ms (${reintentos}/${MAX_REINTENTOS})`);
             await delay(delayReintento);
           } else {
-            console.error(`Error al marcar ticket ${ticketId} después de ${MAX_REINTENTOS} reintentos:`, error.message);
+            console.error(`  ✗ Ticket ${ticketId} falló después de ${MAX_REINTENTOS} reintentos`);
             resultados.push({ ticketId, exito: false, error: error.message });
           }
         } else {
-          console.error(`Error al marcar ticket ${ticketId}:`, error.message);
+          console.error(`  ✗ Error en ticket ${ticketId}:`, error.message);
           resultados.push({ ticketId, exito: false, error: error.message });
           exito = true;
         }
       }
     }
     
-    await delay(DELAY_ENTRE_PETICIONES);
+    if (i < ticketIds.length - 1) {
+      await delay(DELAY_ENTRE_PETICIONES);
+    }
   }
   
   return resultados;
@@ -377,12 +380,17 @@ export async function ejecutarPreMergeDuplicadosVIN() {
     const candidatos = [];
     const ticketsMarcados = new Set();
     
-    for (const grupo of gruposCandidatos) {
+    console.log(`\nProcesando ${gruposCandidatos.length} grupos candidatos...`);
+    
+    for (let i = 0; i < gruposCandidatos.length; i++) {
+      const grupo = gruposCandidatos[i];
       try {
         const validacion = validarGrupoCandidato(grupo);
         
         if (validacion.valido) {
           const todosLosIds = grupo.tickets.map(t => t.id);
+          
+          console.log(`[${i + 1}/${gruposCandidatos.length}] Procesando grupo ${validacion.tipo} - ${todosLosIds.length} tickets`);
           
           await marcarTicketsConTags(todosLosIds, [TAG_ANALIZADO_PRE_MERGE, TAG_CANDIDATO_MERGE, TAG_MERGE_VALIDADO]);
           
@@ -399,8 +407,10 @@ export async function ejecutarPreMergeDuplicadosVIN() {
       }
     }
     
+    console.log(`\nMarcado de tickets completado. Guardando resultados...`);
     mostrarResultados(candidatos);
     await guardarResultados(candidatos);
+    console.log(`Guardando duplicados VIN...`);
     await guardarDuplicadosVIN(tickets);
     
     console.log("\nPre-merge completado.");
