@@ -2,7 +2,7 @@ import zendeskClient from "../zendeskClient.js";
 import { writeFile } from "fs/promises";
 
 const VIN_FIELD_ID = "41998965643412";
-const DIAS_BUSQUEDA = 10;
+const DIAS_BUSQUEDA = 3;
 const MAX_PAGINAS = 10;
 
 const TAG_ANALIZADO_PRE_MERGE = "analizado_pre_merge_vin";
