@@ -2,14 +2,19 @@ name: Zendesk Batch Jobs
 
 on:
   workflow_dispatch:
-
   schedule:
-    # Diario a las 3:00 AM UTC
     - cron: "0 3 * * *"
 
 jobs:
   run-zendesk-batches:
     runs-on: ubuntu-latest
+
+    # 1. Definimos las variables A NIVEL DE JOB.
+    # Así estarán disponibles para TODOS los pasos y scripts de Node.js automáticamente.
+    env:
+      ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
+      ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
+      ZENDESK_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -19,38 +24,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Debug env vars (safe)
-        run: |
-          echo "SUBDOMAIN set? -> ${ZENDESK_SUBDOMAIN:+YES}"
-          echo "EMAIL set? -> ${ZENDESK_EMAIL:+YES}"
-          echo "TOKEN set? -> ${ZENDESK_API_TOKEN:+YES}"
-        env:
-          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
-          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
-          ZENDESK_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
-
 
       - name: Install dependencies
         run: npm ci
 
+      # Paso de validación (opcional pero recomendado para ver si ya los lee)
+      - name: Verify Secrets Presence
+        run: |
+          if [ -z "$ZENDESK_API_TOKEN" ]; then echo "❌ Error: Token no detectado"; exit 1; else echo "✅ Token detectado correctamente"; fi
+
       - name: Run batch 48h
         run: node batches/batch48h.js
-        env:
-          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
-          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
-          ZENDESK_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
 
-
-      - name: Run batch completar campos desde request
+      - name: Run batch completar campos
         run: node batches/batchCompletarCamposDesdeRequest.js
-        env:
-          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
-          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
-          ZENDESK_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
 
-      - name: Run batch pre-merge duplicados VIN
+      - name: Run batch duplicados VIN
         run: node batches/batchPreMergeDuplicadosVIN.js
-        env:
-          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
-          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
-          ZENDESK_API_TOKEN: ${{ secrets.ZENDESK_API_TOKEN }}
