@@ -2,12 +2,12 @@ import zendeskClient from "../zendeskClient.js";
 import { writeFile } from "fs/promises";
 
 const VIN_FIELD_ID = "41998965643412";
-const AREA_FIELD_ID = "41997749373972";
-const DIAS_BUSQUEDA = 30;
+const DIAS_BUSQUEDA = 10;
 const MAX_PAGINAS = 10;
 
-const AREA_POSVENTA = "posventa";
-const ESTADOS_RESUELTOS = ["solved", "closed"];
+const TAG_ANALIZADO_PRE_MERGE = "analizado_pre_merge_vin";
+const TAG_CANDIDATO_MERGE = "pre_merge_vin";
+const TAG_MERGE_VALIDADO = "merge_validado";
 
 async function buscarTickets(dias) {
   const fechaLimite = new Date();
@@ -76,9 +76,6 @@ function extraerVIN(ticket) {
   return extraerCampoPersonalizado(ticket, VIN_FIELD_ID);
 }
 
-function extraerArea(ticket) {
-  return extraerCampoPersonalizado(ticket, AREA_FIELD_ID);
-}
 
 async function obtenerDatosSolicitante(requesterId) {
   try {
@@ -95,36 +92,83 @@ async function obtenerDatosSolicitante(requesterId) {
   }
 }
 
-function esTicketActivo(ticket) {
-  return !ESTADOS_RESUELTOS.includes(ticket.status);
-}
-
-function esTicketResuelto(ticket) {
-  return ESTADOS_RESUELTOS.includes(ticket.status);
-}
 
 function obtenerFechaSinHora(fechaISO) {
   return fechaISO.split("T")[0];
 }
 
-function agruparPorVIN(tickets) {
-  const grupos = {};
+async function agruparCandidatosMerge(tickets, cacheSolicitantes = {}) {
+  const gruposVIN = {};
+  const gruposContacto = {};
   
   for (const ticket of tickets) {
+    const fecha = obtenerFechaSinHora(ticket.created_at);
     const vin = extraerVIN(ticket);
     
-    if (!vin || vin === "") {
-      continue;
+    if (vin && vin !== "") {
+      const claveVIN = `vin:${vin}|fecha:${fecha}`;
+      if (!gruposVIN[claveVIN]) {
+        gruposVIN[claveVIN] = [];
+      }
+      gruposVIN[claveVIN].push(ticket);
     }
     
-    if (!grupos[vin]) {
-      grupos[vin] = [];
+    if (ticket.requester_id) {
+      if (!cacheSolicitantes[ticket.requester_id]) {
+        cacheSolicitantes[ticket.requester_id] = await obtenerDatosSolicitante(ticket.requester_id);
+      }
+      
+      const datosSolicitante = cacheSolicitantes[ticket.requester_id];
+      const email = datosSolicitante.email;
+      const phone = datosSolicitante.phone;
+      
+      if (email && email !== "") {
+        const claveEmail = `email:${email}|fecha:${fecha}`;
+        if (!gruposContacto[claveEmail]) {
+          gruposContacto[claveEmail] = [];
+        }
+        gruposContacto[claveEmail].push(ticket);
+      }
+      
+      if (phone && phone !== "") {
+        const clavePhone = `phone:${phone}|fecha:${fecha}`;
+        if (!gruposContacto[clavePhone]) {
+          gruposContacto[clavePhone] = [];
+        }
+        gruposContacto[clavePhone].push(ticket);
+      }
     }
-    
-    grupos[vin].push(ticket);
   }
   
-  return grupos;
+  const todosLosGrupos = {};
+  
+  for (const clave in gruposVIN) {
+    if (gruposVIN[clave].length >= 2) {
+      const idsUnicos = gruposVIN[clave].map(t => t.id).sort().join(",");
+      if (!todosLosGrupos[idsUnicos]) {
+        todosLosGrupos[idsUnicos] = {
+          tipo: "vin",
+          criterio: clave,
+          tickets: gruposVIN[clave]
+        };
+      }
+    }
+  }
+  
+  for (const clave in gruposContacto) {
+    if (gruposContacto[clave].length >= 2) {
+      const idsUnicos = gruposContacto[clave].map(t => t.id).sort().join(",");
+      if (!todosLosGrupos[idsUnicos]) {
+        todosLosGrupos[idsUnicos] = {
+          tipo: clave.startsWith("email:") ? "email" : "telefono",
+          criterio: clave,
+          tickets: gruposContacto[clave]
+        };
+      }
+    }
+  }
+  
+  return Object.values(todosLosGrupos);
 }
 
 function agruparPorVINyFecha(tickets) {
@@ -173,163 +217,110 @@ function detectarDuplicados(grupos) {
   return duplicados;
 }
 
-async function validarReglasGrupo(ticketsGrupo, cacheSolicitantes = {}) {
-  if (ticketsGrupo.length < 2) {
+function validarGrupoCandidato(grupo) {
+  if (grupo.tickets.length < 2) {
     return { valido: false, motivo: "Menos de 2 tickets en el grupo" };
   }
   
-  const primerTicket = ticketsGrupo[0];
-  const requesterId = primerTicket.requester_id;
-  
-  if (!requesterId) {
-    return { valido: false, motivo: "Ticket sin solicitante" };
-  }
-  
-  if (!cacheSolicitantes[requesterId]) {
-    cacheSolicitantes[requesterId] = await obtenerDatosSolicitante(requesterId);
-  }
-  
-  const datosSolicitanteBase = cacheSolicitantes[requesterId];
-  
-  if (!datosSolicitanteBase.email && !datosSolicitanteBase.phone) {
-    return { valido: false, motivo: "Solicitante sin email ni teléfono" };
-  }
-  
-  let ticketsActivos = 0;
-  let ticketPadre = null;
-  const requestersUnicos = new Set();
-  
-  for (const ticket of ticketsGrupo) {
-    if (ticket.requester_id !== requesterId) {
-      return { valido: false, motivo: "Solicitantes diferentes en el grupo" };
-    }
-    
-    requestersUnicos.add(ticket.requester_id);
-    
-    if (!cacheSolicitantes[ticket.requester_id]) {
-      cacheSolicitantes[ticket.requester_id] = await obtenerDatosSolicitante(ticket.requester_id);
-    }
-    
-    const datosTicket = cacheSolicitantes[ticket.requester_id];
-    
-    if (datosSolicitanteBase.email && datosTicket.email) {
-      if (datosSolicitanteBase.email !== datosTicket.email) {
-        return { valido: false, motivo: "Correo del solicitante no coincide" };
-      }
-    }
-    
-    if (datosSolicitanteBase.phone && datosTicket.phone) {
-      if (datosSolicitanteBase.phone !== datosTicket.phone) {
-        return { valido: false, motivo: "Teléfono del solicitante no coincide" };
-      }
-    }
-    
-    if (esTicketActivo(ticket)) {
-      ticketsActivos++;
-    }
-    
-    const area = extraerArea(ticket);
-    if (area === AREA_POSVENTA && !esTicketResuelto(ticket)) {
-      if (!ticketPadre) {
-        ticketPadre = ticket;
-      }
-    }
-  }
-  
-  if (ticketsActivos !== 1) {
-    return { valido: false, motivo: `Cantidad de tickets activos incorrecta: ${ticketsActivos} (debe ser 1)` };
-  }
-  
-  if (!ticketPadre) {
-    return { valido: false, motivo: "No existe ticket padre con Área=Posventa y estado no resuelto" };
-  }
-  
   return { 
-    valido: true, 
-    ticketPadre,
-    ticketsCandidatos: ticketsGrupo.filter(t => t.id !== ticketPadre.id)
+    valido: true,
+    tipo: grupo.tipo,
+    criterio: grupo.criterio,
+    tickets: grupo.tickets
   };
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function marcarTicketsConTags(ticketIds, tags) {
   const resultados = [];
+  const DELAY_ENTRE_PETICIONES = 300;
+  const MAX_REINTENTOS = 3;
+  const DELAY_REINTENTO_BASE = 2000;
   
   for (const ticketId of ticketIds) {
-    try {
-      const ticket = await zendeskClient.get(`/tickets/${ticketId}.json`);
-      const tagsActuales = ticket.data.ticket.tags || [];
-      
-      const tagsNuevos = [...new Set([...tagsActuales, ...tags])];
-      
-      await zendeskClient.put(`/tickets/${ticketId}.json`, {
-        ticket: {
-          tags: tagsNuevos
+    let reintentos = 0;
+    let exito = false;
+    
+    while (reintentos < MAX_REINTENTOS && !exito) {
+      try {
+        const ticket = await zendeskClient.get(`/tickets/${ticketId}.json`);
+        const tagsActuales = ticket.data.ticket.tags || [];
+        
+        const tagsNuevos = [...new Set([...tagsActuales, ...tags])];
+        
+        await zendeskClient.put(`/tickets/${ticketId}.json`, {
+          ticket: {
+            tags: tagsNuevos
+          }
+        });
+        
+        resultados.push({ ticketId, exito: true });
+        exito = true;
+        
+        if (reintentos > 0) {
+          console.log(`Ticket ${ticketId} marcado exitosamente después de ${reintentos} reintentos`);
         }
-      });
-      
-      resultados.push({ ticketId, exito: true });
-    } catch (error) {
-      console.error(`Error al marcar ticket ${ticketId}:`, error.message);
-      resultados.push({ ticketId, exito: false, error: error.message });
+      } catch (error) {
+        if (error.response && error.response.status === 429) {
+          const retryAfter = error.response.headers['retry-after'] || DELAY_REINTENTO_BASE;
+          const delayReintento = parseInt(retryAfter) * 1000 || DELAY_REINTENTO_BASE * Math.pow(2, reintentos);
+          
+          reintentos++;
+          
+          if (reintentos < MAX_REINTENTOS) {
+            console.log(`Rate limit alcanzado para ticket ${ticketId}. Reintentando en ${delayReintento}ms (intento ${reintentos}/${MAX_REINTENTOS})`);
+            await delay(delayReintento);
+          } else {
+            console.error(`Error al marcar ticket ${ticketId} después de ${MAX_REINTENTOS} reintentos:`, error.message);
+            resultados.push({ ticketId, exito: false, error: error.message });
+          }
+        } else {
+          console.error(`Error al marcar ticket ${ticketId}:`, error.message);
+          resultados.push({ ticketId, exito: false, error: error.message });
+          exito = true;
+        }
+      }
     }
+    
+    await delay(DELAY_ENTRE_PETICIONES);
   }
   
   return resultados;
 }
 
-function mostrarResultados(candidatos, excluidos) {
+function mostrarResultados(candidatos) {
   console.log("\n=== PRE-MERGE: DETECCIÓN DE CANDIDATOS ===\n");
   console.log(`Período de búsqueda: últimos ${DIAS_BUSQUEDA} días`);
-  console.log(`Grupos candidatos: ${candidatos.length}`);
-  console.log(`Grupos excluidos: ${excluidos.length}\n`);
+  console.log(`Grupos candidatos: ${candidatos.length}\n`);
   
   if (candidatos.length > 0) {
     console.log("=== CANDIDATOS A MERGE ===\n");
     for (const candidato of candidatos) {
-      console.log(`VIN: ${candidato.vin}`);
-      console.log(`Ticket padre: #${candidato.ticketPadre.id} - ${candidato.ticketPadre.subject}`);
-      console.log(`Tickets candidatos: ${candidato.ticketsCandidatos.map(t => `#${t.id}`).join(", ")}`);
-      console.log("");
-    }
-  }
-  
-  if (excluidos.length > 0) {
-    console.log("=== GRUPOS EXCLUIDOS ===\n");
-    for (const excluido of excluidos) {
-      console.log(`VIN: ${excluido.vin}`);
-      console.log(`Motivo: ${excluido.motivo}`);
-      console.log(`Tickets: ${excluido.tickets.map(t => `#${t.id}`).join(", ")}`);
+      console.log(`Tipo: ${candidato.tipo}`);
+      console.log(`Criterio: ${candidato.criterio}`);
+      console.log(`Tickets: ${candidato.tickets.map(t => `#${t.id}`).join(", ")}`);
       console.log("");
     }
   }
 }
 
-async function guardarResultados(candidatos, excluidos) {
+async function guardarResultados(candidatos) {
   const resultado = {
     fecha_analisis: new Date().toISOString(),
     dias_busqueda: DIAS_BUSQUEDA,
     total_candidatos: candidatos.length,
-    total_excluidos: excluidos.length,
     candidatos: candidatos.map(c => ({
-      vin: c.vin,
-      ticket_padre: {
-        id: c.ticketPadre.id,
-        subject: c.ticketPadre.subject,
-        status: c.ticketPadre.status
-      },
-      tickets_candidatos: c.ticketsCandidatos.map(t => ({
+      tipo: c.tipo,
+      criterio: c.criterio,
+      tickets: c.tickets.map(t => ({
         id: t.id,
         subject: t.subject,
-        status: t.status
-      }))
-    })),
-    excluidos: excluidos.map(e => ({
-      vin: e.vin,
-      motivo: e.motivo,
-      tickets: e.tickets.map(t => ({
-        id: t.id,
-        subject: t.subject,
-        status: t.status
+        status: t.status,
+        created_at: t.created_at,
+        requester_id: t.requester_id
       }))
     }))
   };
@@ -368,7 +359,7 @@ async function guardarDuplicadosVIN(tickets) {
 }
 
 export async function ejecutarPreMergeDuplicadosVIN() {
-  console.log("Iniciando pre-merge de tickets duplicados por VIN...");
+  console.log("Iniciando pre-merge de tickets duplicados...");
   
   try {
     const tickets = await buscarTickets(DIAS_BUSQUEDA);
@@ -376,59 +367,46 @@ export async function ejecutarPreMergeDuplicadosVIN() {
     
     if (tickets.length === 0) {
       console.log("No se encontraron tickets para analizar.");
-      return { total_tickets: 0, total_candidatos: 0, total_excluidos: 0 };
+      return { total_tickets: 0, total_candidatos: 0 };
     }
     
-    const grupos = agruparPorVIN(tickets);
-    console.log(`Grupos por VIN encontrados: ${Object.keys(grupos).length}`);
+    const cacheSolicitantes = {};
+    const gruposCandidatos = await agruparCandidatosMerge(tickets, cacheSolicitantes);
+    console.log(`Grupos candidatos encontrados: ${gruposCandidatos.length}`);
     
     const candidatos = [];
-    const excluidos = [];
-    const cacheSolicitantes = {};
+    const ticketsMarcados = new Set();
     
-    for (const vin in grupos) {
+    for (const grupo of gruposCandidatos) {
       try {
-        const validacion = await validarReglasGrupo(grupos[vin], cacheSolicitantes);
+        const validacion = validarGrupoCandidato(grupo);
         
         if (validacion.valido) {
-          const todosLosIds = [
-            validacion.ticketPadre.id,
-            ...validacion.ticketsCandidatos.map(t => t.id)
-          ];
+          const todosLosIds = grupo.tickets.map(t => t.id);
           
-          await marcarTicketsConTags(todosLosIds, ["pre_merge_vin", "merge_validado"]);
+          await marcarTicketsConTags(todosLosIds, [TAG_ANALIZADO_PRE_MERGE, TAG_CANDIDATO_MERGE, TAG_MERGE_VALIDADO]);
+          
+          todosLosIds.forEach(id => ticketsMarcados.add(id));
           
           candidatos.push({
-            vin,
-            ticketPadre: validacion.ticketPadre,
-            ticketsCandidatos: validacion.ticketsCandidatos
-          });
-        } else {
-          excluidos.push({
-            vin,
-            motivo: validacion.motivo,
-            tickets: grupos[vin]
+            tipo: validacion.tipo,
+            criterio: validacion.criterio,
+            tickets: grupo.tickets
           });
         }
       } catch (error) {
-        console.error(`Error procesando grupo VIN ${vin}:`, error.message);
-        excluidos.push({
-          vin,
-          motivo: `Error en validación: ${error.message}`,
-          tickets: grupos[vin]
-        });
+        console.error(`Error procesando grupo ${grupo.criterio}:`, error.message);
       }
     }
     
-    mostrarResultados(candidatos, excluidos);
-    await guardarResultados(candidatos, excluidos);
+    mostrarResultados(candidatos);
+    await guardarResultados(candidatos);
     await guardarDuplicadosVIN(tickets);
     
     console.log("\nPre-merge completado.");
     return {
       total_tickets: tickets.length,
-      total_candidatos: candidatos.length,
-      total_excluidos: excluidos.length
+      total_candidatos: candidatos.length
     };
   } catch (error) {
     console.error("Error crítico en pre-merge:", error.message);

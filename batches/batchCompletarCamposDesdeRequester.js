@@ -5,7 +5,7 @@ const FIELD_ID_VIN = 41998965643412;
 const FIELD_KEY_VIN = "vin";
 const FIELD_ID_JAC_STORE = 41998797757844;
 const FIELD_KEY_JAC_STORE = "jac_store";
-const TAG_COMPLETADO = "campos_completados_desde_requester";
+const TAG_COMPLETADO = "campos_completados_desde_Batch";
 const DIAS_BUSQUEDA = 1;
 
 function obtenerFechaInicio() {
