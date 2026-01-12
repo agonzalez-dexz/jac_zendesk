@@ -37,7 +37,7 @@ jobs:
         run: node batches/batch48h.js
 
       - name: Run batch completar campos
-        run: node batches/batchCompletarCamposDesdeRequest.js
+        run: node batches/batchCompletarCamposDesdeRequester.js
 
       - name: Run batch duplicados VIN
         run: node batches/batchPreMergeDuplicadosVIN.js
