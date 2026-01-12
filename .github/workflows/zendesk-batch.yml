@@ -1,0 +1,45 @@
+name: Zendesk Batch Jobs
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Diario a las 3:00 AM UTC
+    - cron: "0 3 * * *"
+
+jobs:
+  run-zendesk-batches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run batch 48h
+        run: node batches/batch48h.js
+        env:
+          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
+          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
+          ZENDESK_TOKEN: ${{ secrets.ZENDESK_TOKEN }}
+
+      - name: Run batch completar campos desde request
+        run: node batches/batchCompletarCamposDesdeRequest.js
+        env:
+          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
+          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
+          ZENDESK_TOKEN: ${{ secrets.ZENDESK_TOKEN }}
+
+      - name: Run batch pre-merge duplicados VIN
+        run: node batches/batchPreMergeDuplicadosVIN.js
+        env:
+          ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
+          ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
+          ZENDESK_TOKEN: ${{ secrets.ZENDESK_TOKEN }}
