@@ -8,6 +8,7 @@ const MAX_PAGINAS = 10;
 const TAG_ANALIZADO_PRE_MERGE = "analizado_pre_merge_vin";
 const TAG_CANDIDATO_MERGE = "pre_merge_vin";
 const TAG_MERGE_VALIDADO = "merge_validado";
+const TAG_MASTER_MAS_VIEJO = "master_merge_vin";
 
 async function buscarTickets(dias) {
   const fechaLimite = new Date();
@@ -222,11 +223,21 @@ function validarGrupoCandidato(grupo) {
     return { valido: false, motivo: "Menos de 2 tickets en el grupo" };
   }
   
+  const statusPermitidos = ["open", "pending"];
+  const ticketsValidos = grupo.tickets.filter(ticket => {
+    const status = ticket.status ? ticket.status.toLowerCase() : "";
+    return statusPermitidos.includes(status);
+  });
+  
+  if (ticketsValidos.length < 2) {
+    return { valido: false, motivo: "Menos de 2 tickets con status Open o Pending" };
+  }
+  
   return { 
     valido: true,
     tipo: grupo.tipo,
     criterio: grupo.criterio,
-    tickets: grupo.tickets
+    tickets: ticketsValidos
   };
 }
 
@@ -388,18 +399,28 @@ export async function ejecutarPreMergeDuplicadosVIN() {
         const validacion = validarGrupoCandidato(grupo);
         
         if (validacion.valido) {
-          const todosLosIds = grupo.tickets.map(t => t.id);
+          const todosLosIds = validacion.tickets.map(t => t.id);
+          
+          const ticketMasViejo = validacion.tickets.reduce((masViejo, ticket) => {
+            const fechaMasViejo = new Date(masViejo.created_at).getTime();
+            const fechaActual = new Date(ticket.created_at).getTime();
+            return fechaActual < fechaMasViejo ? ticket : masViejo;
+          });
           
           console.log(`[${i + 1}/${gruposCandidatos.length}] Procesando grupo ${validacion.tipo} - ${todosLosIds.length} tickets`);
+          console.log(`  Ticket Master (más viejo): #${ticketMasViejo.id} (${ticketMasViejo.created_at}) - Status: ${ticketMasViejo.status}`);
           
           await marcarTicketsConTags(todosLosIds, [TAG_ANALIZADO_PRE_MERGE, TAG_CANDIDATO_MERGE, TAG_MERGE_VALIDADO]);
+          
+          await marcarTicketsConTags([ticketMasViejo.id], [TAG_MASTER_MAS_VIEJO]);
           
           todosLosIds.forEach(id => ticketsMarcados.add(id));
           
           candidatos.push({
             tipo: validacion.tipo,
             criterio: validacion.criterio,
-            tickets: grupo.tickets
+            tickets: validacion.tickets,
+            ticket_master: ticketMasViejo.id
           });
         }
       } catch (error) {

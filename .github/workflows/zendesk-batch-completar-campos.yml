@@ -1,16 +1,14 @@
-name: Zendesk Batch Jobs
+name: Zendesk Batch Completar Campos (Cada Hora)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 * * * *"
 
 jobs:
-  run-zendesk-batches:
+  run-completar-campos:
     runs-on: ubuntu-latest
 
-    # 1. Definimos las variables A NIVEL DE JOB.
-    # Así estarán disponibles para TODOS los pasos y scripts de Node.js automáticamente.
     env:
       ZENDESK_SUBDOMAIN: ${{ secrets.ZENDESK_SUBDOMAIN }}
       ZENDESK_EMAIL: ${{ secrets.ZENDESK_EMAIL }}
@@ -28,13 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Paso de validación (opcional pero recomendado para ver si ya los lee)
       - name: Verify Secrets Presence
         run: |
           if [ -z "$ZENDESK_API_TOKEN" ]; then echo "❌ Error: Token no detectado"; exit 1; else echo "✅ Token detectado correctamente"; fi
 
-      - name: Run batch 48h
-        run: node batches/batch48h.js
-
-      - name: Run batch duplicados VIN
-        run: node batches/batchPreMergeDuplicadosVIN.js
+      - name: Run batch completar campos
+        run: node batches/batchCompletarCamposDesdeRequester.js

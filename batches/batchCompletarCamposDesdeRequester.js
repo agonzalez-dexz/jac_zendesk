@@ -5,6 +5,8 @@ const FIELD_ID_VIN = 41998965643412;
 const FIELD_KEY_VIN = "vin";
 const FIELD_ID_JAC_STORE = 41998797757844;
 const FIELD_KEY_JAC_STORE = "jac_store";
+const FIELD_ID_PRIMER_CONTACTO = 44954337469460;
+const FIELD_KEY_PRIMER_CONTACTO = "primer_contacto";
 const TAG_COMPLETADO = "campos_completados_desde_Batch";
 const DIAS_BUSQUEDA = 1;
 
@@ -23,11 +25,13 @@ function obtenerValorCampoPersonalizado(ticket, fieldId) {
 function ticketNecesitaCompletar(ticket) {
   const vin = obtenerValorCampoPersonalizado(ticket, FIELD_ID_VIN);
   const jacStore = obtenerValorCampoPersonalizado(ticket, FIELD_ID_JAC_STORE);
+  const primerContacto = obtenerValorCampoPersonalizado(ticket, FIELD_ID_PRIMER_CONTACTO);
   
   const vinVacio = !vin || vin === "";
   const jacStoreVacio = !jacStore || jacStore === "";
+  const primerContactoVacio = !primerContacto || primerContacto === "";
   
-  return vinVacio || jacStoreVacio;
+  return vinVacio || jacStoreVacio || primerContactoVacio;
 }
 
 async function buscarTicketsPendientes() {
@@ -93,6 +97,13 @@ async function actualizarTicket(ticketId, camposActualizar) {
     });
   }
   
+  if (camposActualizar.primerContacto !== undefined) {
+    customFields.push({
+      id: FIELD_ID_PRIMER_CONTACTO,
+      value: camposActualizar.primerContacto
+    });
+  }
+  
   const tags = await obtenerTagsTicket(ticketId);
   if (!tags.includes(TAG_COMPLETADO)) {
     tags.push(TAG_COMPLETADO);
@@ -139,6 +150,7 @@ export async function ejecutarBatchCompletarCampos() {
       try {
         const vinTicket = obtenerValorCampoPersonalizado(ticket, FIELD_ID_VIN);
         const jacStoreTicket = obtenerValorCampoPersonalizado(ticket, FIELD_ID_JAC_STORE);
+        const primerContactoTicket = obtenerValorCampoPersonalizado(ticket, FIELD_ID_PRIMER_CONTACTO);
         
         if (!ticket.requester_id) {
           detalleTicket.omitido = true;
@@ -152,6 +164,7 @@ export async function ejecutarBatchCompletarCampos() {
         const requester = await obtenerRequester(ticket.requester_id);
         const vinRequester = obtenerValorCampoPeople(requester, FIELD_KEY_VIN);
         const jacStoreRequester = obtenerValorCampoPeople(requester, FIELD_KEY_JAC_STORE);
+        const primerContactoRequester = obtenerValorCampoPeople(requester, FIELD_KEY_PRIMER_CONTACTO);
         
         const camposActualizar = {};
         const camposActualizados = [];
@@ -164,6 +177,11 @@ export async function ejecutarBatchCompletarCampos() {
         if ((!jacStoreTicket || jacStoreTicket === "") && jacStoreRequester) {
           camposActualizar.jacStore = jacStoreRequester;
           camposActualizados.push("JAC Store");
+        }
+        
+        if ((!primerContactoTicket || primerContactoTicket === "") && primerContactoRequester) {
+          camposActualizar.primerContacto = primerContactoRequester;
+          camposActualizados.push("Primer Contacto");
         }
         
         if (Object.keys(camposActualizar).length === 0) {
