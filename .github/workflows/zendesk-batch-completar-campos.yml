@@ -3,7 +3,7 @@ name: Zendesk Batch Completar Campos (Cada Hora)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */2 * * *"
 
 jobs:
   run-completar-campos:
