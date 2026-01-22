@@ -32,3 +32,6 @@ jobs:
 
       - name: Run batch completar campos
         run: node batches/batchCompletarCamposDesdeRequester.js
+
+      - name: Run batch pre-merge duplicados VIN
+        run: node batches/batchPreMergeDuplicadosVIN.js
